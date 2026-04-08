@@ -57,3 +57,20 @@ const reverseString = (arr) => {
     }
 };
 
+4. Best Time to Buy and Sell Stock (Input: prices = [7,1,5,3,6,4] - Output: 5)
+=> Keep track of the lowest price so far and update the maximum profit whenever a bigger difference is found.
+// Code
+const maxProfit = (arr) => {
+    let min = arr[0]
+    let max = 0
+    for(let i=1;i<arr.length;i++){
+        curr = arr[i]-min
+        if(curr > max){
+            max = curr
+        }
+        if(arr[i]<min){
+            min = arr[i]
+        }
+    }
+    return max
+};
