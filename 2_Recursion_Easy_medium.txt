@@ -15,3 +15,22 @@ const sumArray = (arr) => {
     return arr[0] + sumArray(arr.slice(1));
 };
 console.log(sumArray([1, 2, 3, 4, 5])); 
+
+3. Factorial
+=>
+// code
+const factorial = (n) => {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+};
+console.log(factorial(5));
+
+4. 231 - Power of Two (Input: n = 16 Output: true)
+=> is this power of 2 or not
+// code
+var isPowerOfTwo = function(n) {
+    if(n==1) return true
+    else if((n%2 !=0) || n<1) return false;
+
+    return isPowerOfTwo(n/2)
+};
