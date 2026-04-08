@@ -1,8 +1,17 @@
 1. Sum of first n numbers
-=> using pointer to move and swap element
+=> using recursion
 // code
 const sumN = (n) => {
     if (n === 0) return 0;
     return n + sumN(n - 1);
 };
 console.log(sumN(5));
+
+2. Sum of all element in an array
+=>
+// code
+const sumArray = (arr) => {
+    if (arr.length === 0) return 0;
+    return arr[0] + sumArray(arr.slice(1));
+};
+console.log(sumArray([1, 2, 3, 4, 5])); 
