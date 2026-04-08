@@ -45,3 +45,15 @@ const removeElement = (nums, val) => {
     return x
 };
 
+3. Reverse String
+=> using temp element => swap the element last to first and itirate till n/2
+// Code
+const reverseString = (arr) => {
+    let n = arr.length
+    for(let i=0;i<n/2;i++){
+        let temp = arr[i]
+        arr[i] = arr[n-i-1]
+        arr[n-i-1] = temp
+    }
+};
+
