@@ -109,3 +109,22 @@ const moveZeroes = (nums) => {
         nums[i]=0
     }
 };
+
+7. Max Consecutive Ones (Input: nums = [1,1,0,1,1,1] - Output: 3)
+=> check current and max return maxOne
+// Code
+const findMaxConsecutiveOnes = (nums) => {
+    let curr = 0;
+    let max = 0
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] == 1) {
+            curr++
+        } else {
+            if (curr > max) {
+                max = curr
+            }
+            curr = 0
+        }
+    }
+    return curr > max ? curr : max
+};
