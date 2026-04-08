@@ -128,3 +128,16 @@ const findMaxConsecutiveOnes = (nums) => {
     }
     return curr > max ? curr : max
 };
+
+8. Missing Number (Input: nums = [3,0,1] - Output: 2)
+=> totalSum - partialSum (totalSum = n*(n+1)/2)
+//Code
+const missingNumber = (nums) => {
+    let n = nums.length
+    let totalSum = n * (n + 1) / 2
+    let partialSum = 0
+    for (i = 0; i < n; i++) {
+        partialSum = partialSum + nums[i]
+    }
+    return totalSum - partialSum
+};
