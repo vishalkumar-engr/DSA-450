@@ -1,13 +1,8 @@
-1. 26 - Remove Duplicates from Sorted Array (Input: nums = [1,1,2] Output: 2, nums = [1,2,_])
+1. Sum of first n numbers
 => using pointer to move and swap element
 // code
-const removeDuplicates = (nums) => {
-    let x = 0;
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] > nums[x]) {
-            x = x + 1
-            nums[x] = nums[i]
-        }
-    }
-    return x + 1
+const sumN = (n) => {
+    if (n === 0) return 0;
+    return n + sumN(n - 1);
 };
+console.log(sumN(5));
