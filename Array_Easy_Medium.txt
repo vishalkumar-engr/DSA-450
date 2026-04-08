@@ -1,4 +1,4 @@
-1. Remove Duplicate (Sorted array)
+1. 26 - Remove Duplicate (Sorted array)
 => Use set 
 // Code
 const arr = [1, 2, 2, 3, 4, 4, 5];
@@ -31,7 +31,7 @@ const removeDuplicate = (arr)=>{
     return x+1
 }
 
-2. Remove Element (Input: nums = [0,1,2,2,3,0,4,2], val = 2 - Output: 5, nums = [0,1,4,0,3,_,_,_])
+2. 27 - Remove Element (Input: nums = [0,1,2,2,3,0,4,2], val = 2 - Output: 5, nums = [0,1,4,0,3,_,_,_])
 => Using two pointer => same as above we check get the val and store at first palace and replace them
 // Code
 const removeElement = (nums, val) => {
@@ -45,7 +45,7 @@ const removeElement = (nums, val) => {
     return x
 };
 
-3. Reverse String
+3. 344 - Reverse String
 => using temp element => swap the element last to first and itirate till n/2
 // Code
 const reverseString = (arr) => {
@@ -57,7 +57,7 @@ const reverseString = (arr) => {
     }
 };
 
-4. Best Time to Buy and Sell Stock (Input: prices = [7,1,5,3,6,4] - Output: 5)
+4. 121 - Best Time to Buy and Sell Stock (Input: prices = [7,1,5,3,6,4] - Output: 5)
 => Keep track of the lowest price so far and update the maximum profit whenever a bigger difference is found.
 // Code
 const maxProfit = (arr) => {
@@ -75,7 +75,7 @@ const maxProfit = (arr) => {
     return max
 };
 
-5. Merge Sorted array
+5. 88 - Merge Sorted array
 => Use two pointer array => compare and merge (start from last)
 // Code
 const merge = (nums1, m, nums2, n) => {
@@ -94,7 +94,7 @@ const merge = (nums1, m, nums2, n) => {
     return nums1;
 };
 
-6. Move Zeros (Input: nums = [0,1,0,3,12] - Output: [1,3,12,0,0])
+6. 283 - Move Zeros (Input: nums = [0,1,0,3,12] - Output: [1,3,12,0,0])
 => Using pointer
 // Code
 const moveZeroes = (nums) => {
@@ -110,7 +110,7 @@ const moveZeroes = (nums) => {
     }
 };
 
-7. Max Consecutive Ones (Input: nums = [1,1,0,1,1,1] - Output: 3)
+7. 485 - Max Consecutive Ones (Input: nums = [1,1,0,1,1,1] - Output: 3)
 => check current and max return maxOne
 // Code
 const findMaxConsecutiveOnes = (nums) => {
@@ -129,7 +129,7 @@ const findMaxConsecutiveOnes = (nums) => {
     return curr > max ? curr : max
 };
 
-8. Missing Number (Input: nums = [3,0,1] - Output: 2)
+8. 268 - Missing Number (Input: nums = [3,0,1] - Output: 2)
 => totalSum - partialSum (totalSum = n*(n+1)/2)
 //Code
 const missingNumber = (nums) => {
@@ -140,4 +140,15 @@ const missingNumber = (nums) => {
         partialSum = partialSum + nums[i]
     }
     return totalSum - partialSum
+};
+
+9. 136 - Single Number (Input: nums = [2,2,1] - Output: 1)
+=> when duplicate number is twice then this solution works
+// Code
+const singleNumber = (nums) => {
+    let xor = 0
+    for (let i = 0; i < nums.length; i++) {
+        xor = xor ^ nums[i]
+    }
+    return xor
 };
