@@ -1,5 +1,6 @@
 1. 58 - Length of Last Word
-// Code
+// Code 
+// Approach 1
 var lengthOfLastWord = function(s) {
     let n = s.length - 1;
     while (n >= 0 && s[n] === ' ') n--; // this is for trim from last
@@ -11,3 +12,30 @@ var lengthOfLastWord = function(s) {
     }
     return count;
 };
+
+// Approach 2
+var lengthOfLastWord = function(s) {
+    let n = s.length - 1;
+    let count = 0;
+    while (n >= 0) {
+        if (s[n] !== " ") {
+            count++;
+        } else if (count > 0) {
+            break;
+        }
+        n--;
+    }
+    return count;
+};
+
+2. 2942 - Find Words Containing Character
+=> ["leet","code"], x = "e" => [0,1]
+// Code
+var findWordsContaining = function(words, x) {
+    let arr = []
+    for(let i=0;i<words.length;i++){
+        if(words[i].includes(x)) arr.push(i)
+    }
+    return arr
+};
+
