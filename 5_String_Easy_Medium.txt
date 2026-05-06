@@ -1,1 +1,13 @@
+1. 58 - Length of Last Word
+// Code
+var lengthOfLastWord = function(s) {
+    let n = s.length - 1;
+    while (n >= 0 && s[n] === ' ') n--; // this is for trim from last
 
+    let count = 0;
+    while (n >= 0 && s[n] !== ' ') { // count
+        count++;
+        n--;
+    }
+    return count;
+};
