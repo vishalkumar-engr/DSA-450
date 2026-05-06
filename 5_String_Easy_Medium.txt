@@ -81,3 +81,21 @@ var maxFreqSum = function (s) {
     }
     return maxConsonant + maxVowels
 };
+
+5. 1221 - Split a String in Balanced Strings
+=> s = "RLRRLLRLRL" => 4
+// Code
+var balancedStringSplit = function(s) {
+    let temp=0,count=0
+    for(let i =0;i<s.length;i++){
+        if(s[i] === 'R'){
+            ++temp
+        }else{
+            --temp
+        }
+        if(temp==0){
+            count++
+        }
+    }
+    return count
+};
