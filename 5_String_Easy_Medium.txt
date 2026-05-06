@@ -39,3 +39,45 @@ var findWordsContaining = function(words, x) {
     return arr
 };
 
+3. 771 - Jewels and Stones
+=> jewels = "aA", stones = "aAAbbbb" => 3
+// Code
+var numJewelsInStones = function(jewels, stones) {
+    let jSet = new Set(jewels);
+    let count = 0;
+    for (let c of stones) {
+        if (jSet.has(c)) count++;
+    }
+    return count;
+};
+
+4 3541 - Find Most Frequent Vowel and Consonant
+=> "successes" => 6
+// Code
+var maxFreqSum = function (s) {
+    let map = {}
+    for (i = 0; i < s.length; i++) {
+        if (!map[s[i]]) {
+            map[s[i]] = 1
+        } else {
+            ++map[s[i]]
+        }
+    }
+
+    let vowels = ['a', 'e', 'i', 'o', 'u']
+    let maxVowels = 0
+    let maxConsonant = 0
+    for (let i = 0; i < s.length; i++) {
+        if (vowels.includes(s[i])) {
+            if (map[s[i]] > maxVowels) {
+                maxVowels = map[s[i]]
+            }
+        }
+        else {
+            if (map[s[i]] > maxConsonant) {
+                maxConsonant = map[s[i]]
+            }
+        }
+    }
+    return maxConsonant + maxVowels
+};
