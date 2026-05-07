@@ -266,3 +266,24 @@ var groupAnagrams = function(strs) {
       }
       return Object.values(map);
   };
+
+13. 921 - Minimum Add to Make Parentheses Valid
+=> s = "())" => 1
+// code
+Use stack and solve this issue or
+function minAddToMakeValid(s) {
+    let open = 0;
+    let moves = 0;
+    for (let char of s) {
+        if (char === '(') {
+            open++;
+        } else {
+            if (open > 0) {
+                open--;
+            } else {
+                moves++;
+            }
+        }
+    }
+    return moves + open;
+}
